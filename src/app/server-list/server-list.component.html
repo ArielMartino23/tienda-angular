@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>MMO</th>
+            <th>Max players</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let server of servers" [ngClass]="{'onsale': server.onsale}">
+            <td><img [src]="server.image" [alt]="server.nombre"></td>
+            <td>{{server.nombre}}</td>
+            <td>{{server.MMO}}</td>
+            <td>{{server.Maxplayers}}</td>
+            <td>{{server.Precio | currency}}</td>
+            <td><span class="badge text-bg-success" *ngIf="server.Precio==0">SERVIDOR GRATIS!</span></td>
+        </tr>
+    </tbody>
+</table>
