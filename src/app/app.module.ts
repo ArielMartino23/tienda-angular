@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServerListComponent } from './server-list/server-list.component';
 import { FormsModule } from '@angular/forms';
+import { ServerAboutComponent } from './server-about/server-about.component';
+import { ServerCartComponent } from './server-cart/server-cart.component';
+import { ServerServersComponent } from './server-servers/server-servers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServerListComponent
+    ServerListComponent,
+    ServerAboutComponent,
+    ServerCartComponent,
+    ServerServersComponent
   ],
   imports: [
     BrowserModule,

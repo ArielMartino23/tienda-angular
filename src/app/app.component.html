@@ -7,13 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Algo mas</a>
+          <a class="nav-link" [routerLink]="['/about']">Contacto</a>
         </li>
       </ul>
     </div>
@@ -21,14 +18,7 @@
 </nav>
 
 <div class="container">
-  <div class="row">
-    <div class="col-8">
-      <server-list> </server-list> 
-    </div>
-    <div class="col-4">
-      Carrito de compras
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </div>
 
 <footer> Compra de servidores 2022 </footer>
