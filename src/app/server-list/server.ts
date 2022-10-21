@@ -5,4 +5,6 @@ export interface server{
     Precio : number;
     image : string;
     onsale : boolean;
+    available: number;
+    quantity: number;
 }

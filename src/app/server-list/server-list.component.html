@@ -6,16 +6,27 @@
             <th>MMO</th>
             <th>Max players</th>
             <th>Precio</th>
+            <th>Disponibilidad</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let server of servers" [ngClass]="{'onsale': server.onsale}">
-            <td><img [src]="server.image" [alt]="server.nombre"></td>
+            <td><img width="100" class="img-thumbnail"
+                [src]="server.image" [alt]="server.nombre"></td>
             <td>{{server.nombre}}</td>
             <td>{{server.MMO}}</td>
             <td>{{server.Maxplayers}}</td>
             <td>{{server.Precio | currency}}</td>
+            <td>{{server.available}}</td>
             <td><span class="badge text-bg-success" *ngIf="server.Precio==0">SERVIDOR GRATIS!</span></td>
+            <td>
+                <button class="btn btn-info btn-sm" (click)="downQuantity(server)">-</button>
+                <input type="number" 
+                [(ngModel)]="server.quantity"
+                (keyup)="onChangeQuantity($event, server)">
+                <button class="btn btn-info btn-sm" (click)="upQuantity(server)">+</button>
+            </td>
         </tr>
     </tbody>
 </table>
