@@ -8,7 +8,8 @@
             <th>Max players</th>
             <th>Precio</th>
             <th>Disponibilidad</th>
-            <th>Compra</th>
+            <th>Oferta</th>
+            <th>Cantidad</th>
         </tr>
     </thead>
     <tbody>
@@ -22,11 +23,8 @@
             <td>{{server.available}}</td>
             <td><span class="badge text-bg-success" *ngIf="server.Precio==0">SERVIDOR GRATIS!</span></td>
             <td>
-                <button class="btn btn-info btn-sm" (click)="downQuantity(server)">-</button>
-                <input type="number" 
-                [(ngModel)]="server.quantity"
-                (keyup)="onChangeQuantity($event, server)">
-                <button class="btn btn-info btn-sm" (click)="upQuantity(server)">+</button>
+                <app-input-number [(quantity)]="server.quantity" [max]="server.available" (maxReached)="maxReached($event)"></app-input-number>
+                <button class="btn btn-primary" (click)="addToCart(server)">Comprar</button>
             </td>
         </tr>
     </tbody>

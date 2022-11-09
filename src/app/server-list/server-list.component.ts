@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerCartService } from '../server-cart.service';
 import { server } from './server';
 
 
@@ -41,26 +42,22 @@ export class ServerListComponent implements OnInit {
       quantity: 0,
     }
   ];
-  constructor() { }
+
+  
+  constructor(private cart: ServerCartService) {
+  }
 
   ngOnInit(): void {
   }
 
-  upQuantity(server : server): void {
-    if(server.quantity < server.available)
-      server.quantity++;
+  addToCart(server): void{
+    this.cart.addToCart(server);
+    server.available -= server.quantity;
+    server.quantity = 0;
   }
 
-  downQuantity(server : server): void {
-    if(server.quantity > 0)
-      server.quantity--;
+  maxReached(m: string){
+    alert(m);
   }
 
-  onChangeQuantity(event, server : server): void{
-    //console.log(event);
-    if(event.key > server.available){
-      alert('No se puede pedir mas de los disponibles');
-      event.preventDefault();
-    }
-  }
 }

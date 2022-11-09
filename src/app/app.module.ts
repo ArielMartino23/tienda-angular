@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ServerAboutComponent } from './server-about/server-about.component';
 import { ServerCartComponent } from './server-cart/server-cart.component';
 import { ServerServersComponent } from './server-servers/server-servers.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ServerServersComponent } from './server-servers/server-servers.componen
     ServerListComponent,
     ServerAboutComponent,
     ServerCartComponent,
-    ServerServersComponent
+    ServerServersComponent,
+    InputNumberComponent
   ],
   imports: [
     BrowserModule,

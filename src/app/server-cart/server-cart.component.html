@@ -1,1 +1,6 @@
 <h1>Carrito de compras</h1>
+<ul>
+    <li *ngFor="let server of cartList$ | async">
+        {{server.nombre}} : {{server.quantity}}
+    </li>
+</ul>
